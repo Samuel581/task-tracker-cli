@@ -9,7 +9,7 @@ function readFile(path: string): Task[] {
     try {
         //TODO: Check why this fixed itself after asigning 'uft-8' to the data
         let data = fs.readFileSync(path, 'utf-8');
-        tasks = JSON.parse(data);
+        tasks = JSON.parse(data) as Task[];
     } catch (error) {
         console.error('There was an error reading the tasks', error);
     }
