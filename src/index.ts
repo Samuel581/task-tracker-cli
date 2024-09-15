@@ -2,6 +2,8 @@ import { Task } from  "./interfaces/task.interface";
 import addTask from "./commands/addTask"; 
 import listTasks from "./commands/listTasks";
 import markDone from "./commands/markTaskDone";
+import deleteTask from "./commands/deleteTask";
+
 
 function main(): void {
   const args: string[] = process.argv.slice(2);
@@ -18,8 +20,10 @@ function main(): void {
       console.log(allTasks);
       break;
     case 'done':
-      const id: number = parseInt(commandArgs[0], 10);
-      markDone(id);
+      markDone(parseInt(commandArgs[0], 10));
+      break;
+    case 'delete':
+      deleteTask(parseInt(commandArgs[0], 10));
       break;
     default:
       console.error('Command not found');
