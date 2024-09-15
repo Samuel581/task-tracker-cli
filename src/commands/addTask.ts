@@ -2,7 +2,7 @@ import { Task } from "../interfaces/task.interface";
 import {writeTasks, readFile} from "../utils/fileOperations"
 
 function addTask(description: string): void {
-    let allTasks: Task[] = readFile('../tasks.json');
+    let allTasks: Task[] = readFile();
     const newTask: Task = {
         id: allTasks.length + 1,
         description: description,
@@ -11,5 +11,5 @@ function addTask(description: string): void {
         updatedAt: new Date().toISOString()
     }
     allTasks.push(newTask);
-    writeTasks('../tasks.json', allTasks);
+    writeTasks(allTasks);
 }
