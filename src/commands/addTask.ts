@@ -1,6 +1,5 @@
 import { Task } from "../interfaces/task.interface";
-import readFile from "../utils/readTasks";
-import writeTasks from "../utils/writeTasks";
+import {writeTasks, readFile} from "../utils/fileOperations"
 
 function addTask(description: string): void {
     let allTasks: Task[] = readFile('../tasks.json');

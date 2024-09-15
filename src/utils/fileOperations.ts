@@ -16,4 +16,13 @@ function readFile(path: string): Task[] {
     return tasks;
 } 
 
-export default readFile;
+function writeTasks(path: string, tasks: Task[]): void {
+    const updatedTasks = JSON.stringify(tasks, null, 2);
+    try {
+        fs.writeFileSync(path, updatedTasks, 'utf-8');
+    } catch (error) {
+        console.error("There was an error writing into the file", error);
+    }
+}
+
+export { readFile, writeTasks};
