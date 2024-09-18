@@ -8,6 +8,10 @@ function markDone(id: number){
         console.log(`Task with ID ${id} not found`);
         return false;
     }
+    if(allTasks[indexOfTask].status!=='done'){
+        console.log('You need to start (Mark as in-progress) before marking done a task');
+        return false;
+    }
     allTasks[indexOfTask].status = 'done';
     allTasks[indexOfTask].updatedAt = new Date().toISOString();
     writeTasks(allTasks);
