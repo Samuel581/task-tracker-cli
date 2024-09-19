@@ -12,7 +12,7 @@ function listTasks(status: string): Task[] {
             return allTasks.filter(task => task.status === 'todo');
             break;
         case 'in-progress':
-            return allTasks.filter(task => task.status === 'in-progess');
+            return allTasks.filter(task => task.status === 'in-progress');
             break;
         case 'done':
             return allTasks.filter(task => task.status === 'done');

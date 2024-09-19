@@ -1,7 +1,7 @@
 import { Task } from "../interfaces/task.interface";
 import { writeTasks, readFile } from "../utils/fileOperations";
 
-function markDone(id: number){
+function markInProgress(id: number){
     const allTasks: Task[] = readFile();
     const indexOfTask: number = allTasks.findIndex(task => task.id === id);
     if(indexOfTask === -1){
@@ -19,4 +19,4 @@ function markDone(id: number){
     return true;
 }
 
-export default markDone;
+export default markInProgress;
