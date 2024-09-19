@@ -8,8 +8,8 @@ function markDone(id: number){
         console.log(`Task with ID ${id} not found`);
         return false;
     }
-    if(allTasks[indexOfTask].status!=='in-progress'){
-        console.log('You need to start (Mark as in-progress) before marking done a task');
+    if(allTasks[indexOfTask].status!=='todo'){
+        console.log('You cannot mark as in-progress a task already done');
         return false;
     }
     allTasks[indexOfTask].status = 'done';
